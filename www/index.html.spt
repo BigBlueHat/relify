@@ -1,0 +1,22 @@
+from datetime import datetime
+
+from aspen.logging import log
+import couchdb
+from link_header import parse_link_value
+
+db = couchdb.Server()['relify']
+
+[---]
+links = []
+if request.line.method == 'LINK':
+    for header in headers.all('Link'):
+        links = parse_link_value(header)
+
+db.save({
+    "uri": request.line.uri,
+    "links": links,
+    "created": datetime.now().isoformat()
+    })
+
+[---]
+Greetings!
