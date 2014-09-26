@@ -1,5 +1,6 @@
 from datetime import datetime
 
+from aspen import Response
 from aspen.logging import log
 import couchdb
 from link_header import parse_link_value
@@ -12,11 +13,14 @@ if request.line.method == 'LINK':
     for header in headers.all('Link'):
         links = parse_link_value(header)
 
-db.save({
-    "uri": request.line.uri,
-    "links": links,
-    "created": datetime.now().isoformat()
-    })
+    doc_id, doc_rev = db.save({
+        "uri": request.line.uri,
+        "links": links,
+        "created": datetime.now().isoformat()
+        })
+
+    if doc_id:
+        raise Response(202)
 
 [---]
 Greetings!
