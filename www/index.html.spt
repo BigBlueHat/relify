@@ -13,10 +13,14 @@ if request.line.method == 'LINK' or request.line.method == 'UNLINK':
     for header in headers.all('Link'):
         links = parse_link_value(header)
 
+    if 'From' not in headers:
+        raise Response(412)
+
     doc_id, doc_rev = db.save({
         "method": request.line.method,
         "uri": request.line.uri,
         "links": links,
+        "from": headers['From'],
         "created": datetime.now().isoformat(),
         "raw": headers
         })
