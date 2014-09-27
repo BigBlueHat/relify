@@ -17,7 +17,8 @@ if request.line.method == 'LINK' or request.line.method == 'UNLINK':
         "method": request.line.method,
         "uri": request.line.uri,
         "links": links,
-        "created": datetime.now().isoformat()
+        "created": datetime.now().isoformat(),
+        "raw": headers
         })
 
     if doc_id:
