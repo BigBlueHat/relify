@@ -13,17 +13,24 @@ if request.line.method == 'LINK' or request.line.method == 'UNLINK':
     for header in headers.all('Link'):
         links = parse_link_value(header)
 
-    if 'From' not in headers:
-        raise Response(412)
-
-    doc_id, doc_rev = db.save({
+    doc = {
         "method": request.line.method,
         "uri": request.line.uri,
         "links": links,
-        "from": headers['From'],
         "created": int(time.time()),
         "raw": headers
-        })
+        }
+
+    if 'From' in headers:
+        '''
+        `From`'s value is defined to be an email address.
+        Requiring it and sending confirmation emails can be good for one's
+        health and wellness.
+        '''
+        doc['from'] = headers['From']
+
+    # Save the record to Apache CouchDB for processing.
+    doc_id, doc_rev = db.save(doc)
 
     if doc_id:
         raise Response(202)
