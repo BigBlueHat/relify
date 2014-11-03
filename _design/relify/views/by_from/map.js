@@ -1,5 +1,8 @@
 function(doc) {
-  if ('links' in doc && 'from' in doc) {
-    emit([doc.from, doc.rel, doc.url], (doc.method === 'LINK' ? 1 : -1));
+  if ('links' in doc) {
+    for(var i= 0; i < doc.links.length; i++) {
+      emit([doc.from, doc.links[i].rel, doc.links[i].href],
+           (doc.method === 'LINK' ? 1 : -1));
+    }
   }
 }
