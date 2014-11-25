@@ -15,7 +15,7 @@ if request.line.method == 'LINK' or request.line.method == 'UNLINK':
 
     doc = {
         "method": request.line.method,
-        "uri": request.line.uri,
+        "url": request.line.url,
         "links": links,
         "created": int(time.time()),
         "raw": headers
