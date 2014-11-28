@@ -1,8 +1,15 @@
 function(doc) {
   if ('links' in doc) {
-    for(var i= 0; i < doc.links.length; i++) {
-      emit([doc.from, doc.url, doc.links[i].rel, doc.links[i].href],
-           (doc.method === 'LINK' ? 1 : -1));
+    // gather rel names
+    var rels = Object.keys(doc.links);
+    // loop through rels
+    for(var i = 0; i < rels.length; i++) {
+      // loop through links associated with that rel
+      for(var j = 0; j < doc.links[rels[i]].length; j++) {
+        // emith each url => rel => link tripple (and who it's from)
+        emit([doc.from, doc.url, rels[i], doc.links[rels[i]][j]],
+             (doc.method === 'LINK' ? 1 : -1));
+      }
     }
   }
 }
