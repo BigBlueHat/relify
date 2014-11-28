@@ -34,3 +34,8 @@ $ ./serve.sh
 
 * [] :bug: match PHP implementations `links` object format
 * [] provide WSGI version for more frameworks
+
+
+# License
+
+MIT
