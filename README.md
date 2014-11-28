@@ -12,8 +12,8 @@ URLs for your site (rashly assuming your site is setup this way...).
 
 ### TODO
 
-* [] provide .htaccess file
-* [] expand `links` object to retain all provided attributes (`title`, etc)
+* [ ] provide .htaccess file
+* [ ] expand `links` object to retain all provided attributes (`title`, etc)
 
 
 ## Python implementation
@@ -32,8 +32,8 @@ $ ./serve.sh
 
 ### TODO
 
-* [] :bug: match PHP implementations `links` object format
-* [] provide WSGI version for more frameworks
+* [ ] :bug: match PHP implementations `links` object format
+* [ ] provide WSGI version for more frameworks
 
 
 # License
