@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>relify - Home</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="Link all the links. An implementation of the HTTP LINK method...at last." />
+<meta name="generator" content="BlueInk CMS" />
+<meta name="og:title" content="relify" />
+<meta name="og:type" content="website" />
+<meta name="og:url" content="http://www.relify.com/" />
+<link type="text/css" rel="stylesheet" media="screen, projection, print" href="purecss-blog.css">
+<link type="text/css" rel="stylesheet" media="screen, projection, print" href="site.css">
+</head>
+<body class="columns2">
+
+<div id="layout" class="pure-g">
+    <div class="sidebar pure-u-1 pure-u-med-1-4">
+      <div id="domain-credit">Thanks to
+        <a href="http://terryhorner.github.io/" rel="friend">Terry</a>
+        for the (domain)name
+      </div>
+        <div class="header">
+            <hgroup>
+              <h1 class="brand-title">rel<span class="muted">ify</span></h1>
+              <h2 class="brand-tagline">Link all the links. An implementation of the HTTP LINK method...at last.</h2>
+            </hgroup>
+
+            <!--nav class="nav">
+                <ul class="nav-list">
+<li class="nav-item"><a class="pure-button" href="/home">Home</a></li>                </ul>
+            </nav-->
+        </div>
+    </div>
+  <div id="content">
+    <div class="content pure-u-1 pure-u-med-3-4">
+        <div>
+          <div class="posts contentcol col_main" id="ddcol_0">
+                <!--<h1 class="content-subhead">Recent Posts</h1>-->
+            <section class="item html 1 dditem post" id="dditem_1">
+<!--                    <header class="post-header">
+                        <img class="post-avatar" alt="Eric Ferraiuolo&#x27;s avatar" height="48" width="48" src="/img/common/ericf-avatar.png">
+
+                      <h2 class="post-title">Home</h2>
+
+                        <p class="post-meta">
+                          By <a class="post-author" href="#"></a> under
+                        </p>
+                    </header>-->
+
+                    <div class="post-description">
+                      <h3 class="ddheader">Return of the LINK method</h3>
+
+
+<p>In 1997, <a href="http://tools.ietf.org/html/rfc2068">RFC 2068</a>
+--think HTTP/1.1 "beta"--defined a LINK <strong><em>method</em> </strong>so that editors could send link requests to each other. Here's an example <strong>request</strong> which states that relify.com is "about" RFC 2068:</p>
+<pre>LINK /html/rfc2068<br />Host: tools.ietf.org<br />Link: &lt;http://relify.com/&gt;; rel="about"<br /></pre>
+<p>And in <strong>response</strong>:</p>
+<pre>HTTP/1.1 202 Accepted</pre>
+<p>202 is used to minimize the risk of Denial-of-Service attempts.</p>
+<h4>Some History</h4>
+<p>The <a href="https://www.w3.org/Protocols/HTTP/Methods/Link.html">LINK</a> and <a href="https://www.w3.org/Protocols/HTTP/Methods/Unlink.html">UNLINK</a> methods appear as early as 1992 in relation to a proposed "HTTP2" (no relation to the current HTTP/2).</p>
+<p>Later, between 1997 (the publication date of RFC 2068) and 1998 (the launch of <a href="http://tools.ietf.org/html/rfc2616">RFC 2616</a>--HTTP/1.1), no one had attempted implementation (at least not at a sufficient level for the editors--and <a href="http://tools.ietf.org/html/rfc2616#page-175">the LINK method was removed</a> from the HTTP/1.1 spec (along with UNLINK, <a title="back as of RFC 5789" href="http://tools.ietf.org/html/rfc5789">PATCH</a>, and <a title="back as of RFC 5988" href="http://tools.ietf.org/html/rfc5988">Link headers</a>).</p>
+<p>Relify project aims to bring it back with the help of <a href="http://tools.ietf.org/html/draft-snell-link-method-12">draft-snell-link-method-12</a> as a guide--which couldn't have showed up at a better time! Here's some early <a href="http://www.chmod777self.com/2013/08/now-that-you-mention-it.html">thoughts on bringing LINK &amp; UNLINK back by James Snell</a>.</p>
+<p><a href="http://github.com/BigBlueHat/relify">Contribute on GitHub.</a></p>
+
+                    </div>
+                </section>
+            </div>
+                      <div class="footer contentcol col_sidebar" id="ddcol_1">
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
+
